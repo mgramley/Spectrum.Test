@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Spectrum.Test.Core\Spectrum.Test.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\" />
+  </ItemGroup>
+
 </Project>
