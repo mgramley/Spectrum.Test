@@ -12,6 +12,7 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Platforms.Android.Presenters;
 using MvvmCross.ViewModels;
+using Spectrum.Test.Core.ViewModels.PresentationHints;
 
 namespace Spectrum.Test.Droid
 {
@@ -23,6 +24,10 @@ namespace Spectrum.Test.Droid
 
         public override Task<bool> ChangePresentation(MvxPresentationHint hint)
         {
+            if (hint is PopBackStackHint)
+            {
+                this?.CurrentFragmentManager?.PopBackStack();
+            }
             return base.ChangePresentation(hint);
         }
     }

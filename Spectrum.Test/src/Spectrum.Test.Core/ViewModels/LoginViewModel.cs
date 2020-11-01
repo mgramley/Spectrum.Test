@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using Spectrum.Test.Core.ViewModels.AccountCreation;
+using Spectrum.Test.Core.ViewModels.PresentationHints;
 
 namespace Spectrum.Test.Core.ViewModels
 {
@@ -19,10 +20,17 @@ namespace Spectrum.Test.Core.ViewModels
         {
             _navigationService = navigationService;
         }
+        public override void Prepare()
+        {
+            base.Prepare();
+            _navigationService.ChangePresentation(new PopBackStackHint());
+
+        }
 
         private Task OnNewUserCommand()
         {
             return _navigationService.Navigate<NewAccountViewModel>();
         }
+
     }
 }

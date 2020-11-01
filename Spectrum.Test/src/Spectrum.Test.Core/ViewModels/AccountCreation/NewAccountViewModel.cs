@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
+using Spectrum.Test.Core.ViewModels.PresentationHints;
 
 namespace Spectrum.Test.Core.ViewModels.AccountCreation
 {
@@ -26,6 +27,8 @@ namespace Spectrum.Test.Core.ViewModels.AccountCreation
         {
             base.ViewDisappearing();
             //_navigationService.ChangePresentation()
+            //_navigationService.Close(this);
+            //_navigationService.ChangePresentation(new PopBackStackHint());
         }
     }
 }

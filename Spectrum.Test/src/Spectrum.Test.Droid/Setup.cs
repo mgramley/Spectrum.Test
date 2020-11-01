@@ -8,8 +8,10 @@ namespace Spectrum.Test.Droid
     {
         protected override IMvxAndroidViewPresenter CreateViewPresenter()
         {
-            var presenter = base.CreateViewPresenter();
-            return presenter;
+            //var presenter = base.CreateViewPresenter();
+            //return presenter;
+
+            return new CustomPresenter(AndroidViewAssemblies);
         }
     }
 }

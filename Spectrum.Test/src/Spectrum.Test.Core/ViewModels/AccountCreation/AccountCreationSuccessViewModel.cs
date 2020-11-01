@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
+using Spectrum.Test.Core.ViewModels.PresentationHints;
 
 namespace Spectrum.Test.Core.ViewModels.AccountCreation
 {
@@ -23,7 +24,8 @@ namespace Spectrum.Test.Core.ViewModels.AccountCreation
         public override void Prepare()
         {
              base.Prepare();
-             //_navigationService.Close()
+            _navigationService.ChangePresentation(new PopBackStackHint());
+
         }
 
         private Task OnLoginReturnCommand()
