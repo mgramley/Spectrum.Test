@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,16 +7,18 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Util;
 using Android.Views;
 using Android.Widget;
-using Spectrum.Test.Core.ViewModels.Main;
 using MvvmCross.Platforms.Android.Presenters.Attributes;
+using Spectrum.Test.Core.ViewModels;
+using Spectrum.Test.Core.ViewModels.Main;
 
-namespace Spectrum.Test.Droid.Views.Main
+namespace Spectrum.Test.Droid.Views.Login
 {
     [MvxFragmentPresentation(typeof(MainContainerViewModel), Resource.Id.content_frame)]
-    public class MainFragment : BaseFragment<MainViewModel>
+    public class LoginFragment : BaseFragment<LoginViewModel>
     {
-        protected override int FragmentLayoutId => Resource.Layout.fragment_main;
+        protected override int FragmentLayoutId => Resource.Layout.fragment_sign_in;
     }
 }

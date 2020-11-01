@@ -1,5 +1,6 @@
-﻿using MvvmCross.IoC;
+using MvvmCross.IoC;
 using MvvmCross.ViewModels;
+using Spectrum.Test.Core.ViewModels;
 using Spectrum.Test.Core.ViewModels.Main;
 
 namespace Spectrum.Test.Core
@@ -13,7 +14,7 @@ namespace Spectrum.Test.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<MainViewModel>();
+            RegisterAppStart<LoginViewModel>();
         }
     }
 }

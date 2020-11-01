@@ -3,4 +3,10 @@
     <string name="app_name">Spectrum.Test</string>
     <string name="app_welcome_message">Welcome!!</string>
     <string name="app_message">App scaffolded with MvxScaffolding</string>
+
+    <string name="sign_in_header">Sign In</string>
+    <string name="sign_in_username_hint">user@email.com</string>
+    <string name="sign_in_password_hint">password</string>
+    <string name="sign_in_btn_login">Login</string>
+    <string name="sign_in_btn_new_user">New User? Create Account</string>
 </resources>
