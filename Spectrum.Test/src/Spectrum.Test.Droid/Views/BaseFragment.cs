@@ -26,5 +26,6 @@ namespace Spectrum.Test.Droid.Views
 
             return this.BindingInflate(FragmentLayoutId, container, false);
         }
+
     }
 }

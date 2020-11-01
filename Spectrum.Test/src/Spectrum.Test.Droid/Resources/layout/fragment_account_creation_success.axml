@@ -15,6 +15,12 @@
         android:id="@+id/account_created_header_text"
         android:layout_gravity="center_horizontal" />
 
+    <ImageView
+        android:layout_width="128sp"
+        android:layout_height="128sp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/round_check_circle_24"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,5 +37,6 @@
         android:layout_gravity="center_horizontal"
         android:text="@string/account_created_btn_login_return"
         android:layout_margin="@dimen/margin_large"
-        android:id="@+id/account_created_login_return_btn"/>
+        android:id="@+id/account_created_login_return_btn"
+        local:MvxBind="Click LoginReturnCommand"/>
 </LinearLayout>
