@@ -8,7 +8,7 @@ using Android.Content;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
-using Android.Widget;
+using AndroidX.AppCompat.Widget;
 using MvvmCross.Platforms.Android.Views;
 using MvvmCross.ViewModels;
 
@@ -18,12 +18,16 @@ namespace Spectrum.Test.Droid.Views
         where TViewModel : class, IMvxViewModel
     {
         protected abstract int ActivityLayoutId { get; }
+        protected Toolbar Toolbar { get; private set; }
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
             SetContentView(ActivityLayoutId);
+            Toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+
+            SetSupportActionBar(Toolbar);
         }
     }
 }

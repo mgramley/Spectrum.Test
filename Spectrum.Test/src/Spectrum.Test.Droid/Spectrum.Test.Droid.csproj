@@ -72,6 +72,7 @@
     <Compile Include="Views\BaseFragment.cs" />
     <Compile Include="Views\Login\LoginFragment.cs" />
     <Compile Include="Views\Main\MainContainerActivity.cs" />
+    <Compile Include="Views\NewAccount\NewAccountFragment.cs" />
     <Compile Include="Views\Splash\SplashActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,6 +137,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\fragment_new_account.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\fragment_account_creation_success.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

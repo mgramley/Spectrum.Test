@@ -11,4 +11,5 @@
     <dimen name="margin_huge">64dp</dimen>
 
     <dimen name="text_size_header">32sp</dimen>
+    <dimen name="text_size_message">16sp</dimen>
 </resources>
