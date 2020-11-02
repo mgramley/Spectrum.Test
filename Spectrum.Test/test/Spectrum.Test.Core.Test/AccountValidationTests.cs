@@ -143,5 +143,37 @@ namespace Spectrum.Test.Core.Test
             var monthPlus = DateTime.Now.Date.AddDays(31);
             Assert.IsFalse(AccountValidation.IsValidStartDate(monthPlus));
         }
+
+        [Test]
+        public void ValidPhoneNumberTest()
+        {
+            var phone1 = "650-555-2345";
+            var phone2 = "4155551234";
+            var phone3 = "(415) 555-1234";
+            var phone4 = "(415)-555-1234";
+            var phone5 = "415 555 1234";
+
+            Assert.IsTrue(AccountValidation.IsValidPhoneNumber(phone1));
+            Assert.IsTrue(AccountValidation.IsValidPhoneNumber(phone2));
+            Assert.IsTrue(AccountValidation.IsValidPhoneNumber(phone3));
+            Assert.IsTrue(AccountValidation.IsValidPhoneNumber(phone4));
+            Assert.IsTrue(AccountValidation.IsValidPhoneNumber(phone5));
+
+            var phone6 = "1112223333435252562";
+            var phone7 = "4155551234aasgag";
+            var phone8 = "abc";
+            var phone9 = "1112223333abc";
+            var phone10 = "10";
+            var phone11 = "10   111  1";
+            var phone12 = "111222333444";
+
+            Assert.IsFalse(AccountValidation.IsValidPhoneNumber(phone6));
+            Assert.IsFalse(AccountValidation.IsValidPhoneNumber(phone7));
+            Assert.IsFalse(AccountValidation.IsValidPhoneNumber(phone8));
+            Assert.IsFalse(AccountValidation.IsValidPhoneNumber(phone9));
+            Assert.IsFalse(AccountValidation.IsValidPhoneNumber(phone10));
+            Assert.IsFalse(AccountValidation.IsValidPhoneNumber(phone11));
+            Assert.IsFalse(AccountValidation.IsValidPhoneNumber(phone12));
+        }
     }
 }
