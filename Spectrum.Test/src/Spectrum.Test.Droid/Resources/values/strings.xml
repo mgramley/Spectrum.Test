@@ -24,6 +24,9 @@
     <string name="account_created_btn_login_return">Login Now?</string>
 
     <string name="user_welcome_header">Welcome!</string>
+    <string name="user_view_all">See All Users</string>
+
+    <string name="directory_header">User Directory</string>
 
 
 </resources>

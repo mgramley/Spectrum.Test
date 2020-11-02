@@ -15,6 +15,7 @@ namespace Spectrum.Test.Core.ViewModels.User
         private string _phoneNumber;
         private string _serviceStartDate;
         private MvxAsyncCommand _viewAllUsersCommand;
+        private MvxAsyncCommand _seeAllUsersCommand;
 
         public UserViewModel(IMvxNavigationService navigationService)
         {
@@ -64,7 +65,7 @@ namespace Spectrum.Test.Core.ViewModels.User
 
         private Task OnViewAllUsersCommand()
         {
-            return _navigationService.Navigate<UsersListViewModel>();
+            return _navigationService.Navigate<UsersDirectoryViewModel>();
         }
     }
 }

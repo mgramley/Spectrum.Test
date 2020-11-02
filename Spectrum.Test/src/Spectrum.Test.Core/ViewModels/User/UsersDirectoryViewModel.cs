@@ -5,11 +5,11 @@ using MvvmCross.Navigation;
 
 namespace Spectrum.Test.Core.ViewModels.User
 {
-    public class UsersListViewModel : BaseViewModel
+    public class UsersDirectoryViewModel : BaseViewModel
     {
         private readonly IMvxNavigationService _navigationService;
 
-        public UsersListViewModel(IMvxNavigationService navigationService)
+        public UsersDirectoryViewModel(IMvxNavigationService navigationService)
         {
             _navigationService = navigationService;
         }
