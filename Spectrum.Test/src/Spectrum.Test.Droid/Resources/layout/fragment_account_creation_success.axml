@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/account_created_header"
+        android:textSize="@dimen/text_size_header"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:layout_marginTop="@dimen/margin_large"
+        android:id="@+id/account_created_header_text"
+        android:layout_gravity="center_horizontal" />
+
+    <ImageView
+        android:layout_width="128sp"
+        android:layout_height="128sp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/round_check_circle_24"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/account_created_message"
+        android:textSize="@dimen/text_size_message"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:id="@+id/account_created_message_text"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/account_created_btn_login_return"
+        android:layout_margin="@dimen/margin_large"
+        android:id="@+id/account_created_login_return_btn"
+        local:MvxBind="Click LoginReturnCommand"/>
+</LinearLayout>

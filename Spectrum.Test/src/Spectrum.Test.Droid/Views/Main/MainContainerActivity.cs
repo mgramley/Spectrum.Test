@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using MvvmCross.ViewModels;
 using Spectrum.Test.Core.ViewModels.Main;
 
 namespace Spectrum.Test.Droid.Views.Main
@@ -27,5 +28,7 @@ namespace Spectrum.Test.Droid.Views.Main
             if (bundle == null)
                 ViewModel.ShowLoginCommand.Execute();
         }
+
+       
     }
 }

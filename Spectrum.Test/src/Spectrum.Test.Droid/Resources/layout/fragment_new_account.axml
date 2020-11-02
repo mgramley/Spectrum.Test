@@ -1,7 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_account_header"
+            android:textSize="@dimen/text_size_header"
+            android:layout_marginBottom="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_large"
+            android:id="@+id/new_account_header_text"
+            android:layout_gravity="center_horizontal" 
+            />
 
-</LinearLayout>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="@string/new_account_first_name_hint"
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/new_account_first_edit"
+            local:MvxBind="Text FirstName; Error FirstNameErrorMessage"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="@string/new_account_last_name_hint"
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/new_account_last_edit"
+            local:MvxBind="Text LastName; Error LastNameErrorMessage"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="@string/new_account_email_hint"
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/new_account_email_edit"
+            local:MvxBind="Text Email; Error EmailErrorMessage"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:hint="@string/new_account_phone_hint"
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/new_account_phone_edit"
+            local:MvxBind="Text PhoneNumber; Error PhoneNumberErrorMessage"/>
+        
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:hint="@string/new_account_start_hint"
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/new_account_service_date_edit"
+            local:MvxBind="Text ServiceStartDateString; Error ServiceDateErrorMessage"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="@string/new_account_password_hint"
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/new_account_password_edit"
+            local:MvxBind="Text Password; Error PasswordErrorMessage"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/new_account_btn_create_account"
+            android:layout_margin="@dimen/margin_small"
+            android:id="@+id/new_account_create_account_btn"
+            local:MvxBind="Click CreateAccountCommand"/>
+    </LinearLayout>
+</ScrollView>

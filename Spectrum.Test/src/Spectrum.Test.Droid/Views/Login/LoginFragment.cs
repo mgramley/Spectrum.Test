@@ -16,7 +16,7 @@ using Spectrum.Test.Core.ViewModels.Main;
 
 namespace Spectrum.Test.Droid.Views.Login
 {
-    [MvxFragmentPresentation(typeof(MainContainerViewModel), Resource.Id.content_frame)]
+    [MvxFragmentPresentation(typeof(MainContainerViewModel), Resource.Id.content_frame, true)]
     public class LoginFragment : BaseFragment<LoginViewModel>
     {
         protected override int FragmentLayoutId => Resource.Layout.fragment_sign_in;

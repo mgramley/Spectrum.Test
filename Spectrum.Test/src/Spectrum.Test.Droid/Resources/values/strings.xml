@@ -9,4 +9,21 @@
     <string name="sign_in_password_hint">password</string>
     <string name="sign_in_btn_login">Login</string>
     <string name="sign_in_btn_new_user">New User? Create Account</string>
+
+    <string name="new_account_header">New Account</string>
+    <string name="new_account_first_name_hint">First Name</string>
+    <string name="new_account_last_name_hint">Last Name</string>
+    <string name="new_account_email_hint">user@email.com</string>
+    <string name="new_account_password_hint">password</string>
+    <string name="new_account_phone_hint">Phone Number</string>
+    <string name="new_account_start_hint">Service Start Date</string>
+    <string name="new_account_btn_create_account">Create Account</string>
+
+    <string name="account_created_header">Success!</string>
+    <string name="account_created_message">Account Successfully Created</string>
+    <string name="account_created_btn_login_return">Login Now?</string>
+
+    <string name="user_welcome_header">Welcome!</string>
+
+
 </resources>
