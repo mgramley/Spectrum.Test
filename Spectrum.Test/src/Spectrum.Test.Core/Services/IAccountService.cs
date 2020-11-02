@@ -8,12 +8,14 @@ namespace Spectrum.Test.Core.Services
 {
     public interface IAccountService 
     {
-        Task<AccountCreationResult> CreateAccount(string firstName, string lastName, string email, string password,
+        Task<AccountCreationResult> CreateAccountAsync(string firstName, string lastName, string email, string password,
             string phoneNumber, DateTime serviceStartDate);
 
-        Task<Tuple<LoginResult, IUser>> Login(string email, string password);
+        Task<Tuple<LoginResult, IUser>> LoginAsync(string email, string password);
 
-        Task<IList<IUser>> GetAllUsers();
+        Task<List<IUser>> GetAllUsersAsync();
+
+        Task<bool> IsEmailRegisteredAsync(string email);
     }
 
     public class AccountCreationResult

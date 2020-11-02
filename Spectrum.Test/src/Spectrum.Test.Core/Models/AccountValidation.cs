@@ -1,3 +1,4 @@
+using System;
 using System.Text.RegularExpressions;
 
 namespace Spectrum.Test.Core.Models
@@ -8,6 +9,8 @@ namespace Spectrum.Test.Core.Models
 
         // 1 Upper, 1 Lower, 8-15 chars
         private const string PasswordPattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,15}$";
+
+        private const string SpecialCharactersPattern = @"[`!@#$%^&]";
 
         /// <summary>
         /// Tests whether an email is in the correct form
@@ -38,7 +41,17 @@ namespace Spectrum.Test.Core.Models
         public static bool IsValidPasswordForCreation(string password)
         {
             return !string.IsNullOrWhiteSpace(password) && Regex.IsMatch(password, PasswordPattern) && HasNoRepeatingChars(password);
-        } 
+        }
+
+        public static bool IsValidStartDate(DateTime startDate)
+        {
+            return startDate.Date >= DateTime.Now.Date && startDate.Date <= DateTime.Now.Date.AddDays(30);
+        }
+
+        public static bool IsValidName(string name)
+        {
+            return !Regex.IsMatch(name, SpecialCharactersPattern);
+        }
 
         private static bool HasNoRepeatingChars(string password)
         {

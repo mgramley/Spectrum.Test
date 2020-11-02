@@ -68,6 +68,7 @@
     <Compile Include="CustomPresenter.cs" />
     <Compile Include="Linker\LinkerPleaseInclude.cs" />
     <Compile Include="MainApplication.cs" />
+    <Compile Include="Providers\AndroidFileProvider.cs" />
     <Compile Include="Services\AndroidAccountService.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\BaseActivity.cs" />

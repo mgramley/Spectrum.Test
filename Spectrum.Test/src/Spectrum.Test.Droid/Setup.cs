@@ -2,7 +2,9 @@ using MvvmCross;
 using MvvmCross.Platforms.Android.Core;
 using MvvmCross.Platforms.Android.Presenters;
 using Spectrum.Test.Core;
+using Spectrum.Test.Core.Providers;
 using Spectrum.Test.Core.Services;
+using Spectrum.Test.Droid.Providers;
 using Spectrum.Test.Droid.Services;
 
 namespace Spectrum.Test.Droid
@@ -12,7 +14,8 @@ namespace Spectrum.Test.Droid
         protected override void InitializeFirstChance()
         {
             base.InitializeFirstChance();
-            Mvx.IoCProvider.RegisterSingleton<IAccountService>( new AndroidAccountService());
+            //Mvx.IoCProvider.RegisterSingleton<IAccountService>( new AndroidAccountService());
+            Mvx.IoCProvider.RegisterType<IFileProvider, AndroidFileProvider>();
         }
 
         protected override IMvxAndroidViewPresenter CreateViewPresenter()

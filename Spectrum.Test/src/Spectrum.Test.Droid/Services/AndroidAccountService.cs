@@ -6,19 +6,19 @@ using Spectrum.Test.Core.Services;
 
 namespace Spectrum.Test.Droid.Services
 {
-    public class AndroidAccountService : IAccountService
-    {
-        public Task<AccountCreationResult> CreateAccount(string firstName, string lastName, string email, string password, string phoneNumber,
-            DateTime serviceStartDate) =>
-            throw new NotImplementedException();
+    //public class AndroidAccountService : IAccountService
+    //{
+    //    public Task<AccountCreationResult> CreateAccountAsync(string firstName, string lastName, string email, string password, string phoneNumber,
+    //        DateTime serviceStartDate) =>
+    //        throw new NotImplementedException();
 
-        public Task<Tuple<LoginResult, IUser>> Login(string email, string password)
-        {
-            return Task.FromResult(new Tuple<LoginResult, IUser> (LoginResult.NoAccount, null));
-        }
+    //    public Task<Tuple<LoginResult, IUser>> LoginAsync(string email, string password)
+    //    {
+    //        return Task.FromResult(new Tuple<LoginResult, IUser> (LoginResult.NoAccount, null));
+    //    }
 
-        public Task<bool> IsValidUsername(string username) => throw new NotImplementedException();
+    //    public Task<bool> IsValidUsername(string username) => throw new NotImplementedException();
 
-        public Task<IList<IUser>> GetAllUsers() => throw new NotImplementedException();
-    }
+    //    public Task<IList<IUser>> GetAllUsers() => throw new NotImplementedException();
+    //}
 }

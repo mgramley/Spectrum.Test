@@ -1,8 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using Spectrum.Test.Core.Models;
 
@@ -102,6 +98,50 @@ namespace Spectrum.Test.Core.Test
             var pass8charsCorrectForm = "acdefghi";
 
             Assert.IsTrue(AccountValidation.IsValidPasswordForLogin(pass8charsCorrectForm));
+        }
+
+        [Test]
+        public void ValidNamesTest()
+        {
+            string name1 = "John";
+            Assert.IsTrue(AccountValidation.IsValidName(name1));
+
+            string name2 = "John!";
+            Assert.IsFalse(AccountValidation.IsValidName(name2));
+
+            string name3 = "John@";
+            Assert.IsFalse(AccountValidation.IsValidName(name3));
+
+            string name4 = "John#";
+            Assert.IsFalse(AccountValidation.IsValidName(name4));
+
+            string name5 = "John$";
+            Assert.IsFalse(AccountValidation.IsValidName(name5));
+
+            string name6 = "John%";
+            Assert.IsFalse(AccountValidation.IsValidName(name6));
+
+            string name7 = "John^";
+            Assert.IsFalse(AccountValidation.IsValidName(name7));
+
+            string name8 = "John&";
+            Assert.IsFalse(AccountValidation.IsValidName(name8));
+        }
+
+        [Test]
+        public void ValidStartDateTest()
+        {
+            var tommorrow = DateTime.Now.Date.AddDays(1);
+            Assert.IsTrue(AccountValidation.IsValidStartDate(tommorrow));
+
+            var yesterday = DateTime.Now.Date.AddDays(-1);
+            Assert.IsFalse(AccountValidation.IsValidStartDate(yesterday));
+
+            var month = DateTime.Now.Date.AddDays(30);
+            Assert.IsTrue(AccountValidation.IsValidStartDate(month));
+
+            var monthPlus = DateTime.Now.Date.AddDays(31);
+            Assert.IsFalse(AccountValidation.IsValidStartDate(monthPlus));
         }
     }
 }

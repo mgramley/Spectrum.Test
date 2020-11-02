@@ -4,11 +4,12 @@ using System.Text;
 using System.Threading.Tasks;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
+using Spectrum.Test.Core.Models.Entities;
 using Spectrum.Test.Core.ViewModels.PresentationHints;
 
 namespace Spectrum.Test.Core.ViewModels.AccountCreation
 {
-    public class AccountCreationSuccessViewModel : BaseViewModel
+    public class AccountCreationSuccessViewModel : BaseViewModel<IUser>
     {
         private readonly IMvxNavigationService _navigationService;
 
@@ -19,6 +20,10 @@ namespace Spectrum.Test.Core.ViewModels.AccountCreation
         public AccountCreationSuccessViewModel(IMvxNavigationService navigationService)
         {
             _navigationService = navigationService;
+        }
+
+        public override void Prepare(IUser user)
+        {
         }
 
         public override void Prepare()

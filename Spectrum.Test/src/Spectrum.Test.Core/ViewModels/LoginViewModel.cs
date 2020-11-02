@@ -76,7 +76,7 @@ namespace Spectrum.Test.Core.ViewModels
 
         private async Task OnLoginCommandAsync()
         {
-            Tuple<LoginResult, IUser> result = await _accountService.Login(Email, Password);
+            Tuple<LoginResult, IUser> result = await _accountService.LoginAsync(Email, Password);
 
             switch (result.Item1)
             {

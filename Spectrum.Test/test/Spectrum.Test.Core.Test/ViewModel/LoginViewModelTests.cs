@@ -78,7 +78,7 @@ namespace Spectrum.Test.Core.Test.ViewModel
         public void LoginSuccessCommandTest()
         {
             var user = Substitute.For<IUser>();
-            _accountService.Login(_validEmail, _validPassword)
+            _accountService.LoginAsync(_validEmail, _validPassword)
                 .Returns(new Tuple<LoginResult, IUser>(LoginResult.Success, user));
 
             _sutLoginViewModel.Email = _validEmail;
@@ -92,7 +92,7 @@ namespace Spectrum.Test.Core.Test.ViewModel
         public void LoginSuccessBadUserCommandTest()
         {
             var user = Substitute.For<IUser>();
-            _accountService.Login(_validEmail, _validPassword)
+            _accountService.LoginAsync(_validEmail, _validPassword)
                 .Returns(new Tuple<LoginResult, IUser>(LoginResult.Success, null));
 
             _sutLoginViewModel.Email = _validEmail;
@@ -105,7 +105,7 @@ namespace Spectrum.Test.Core.Test.ViewModel
         [Test]
         public void LoginNoAccountCommandTest()
         {
-            _accountService.Login(_validEmail, _validPassword)
+            _accountService.LoginAsync(_validEmail, _validPassword)
                 .Returns(new Tuple<LoginResult, IUser>(LoginResult.NoAccount, null));
 
             _sutLoginViewModel.Email = _validEmail;
@@ -119,7 +119,7 @@ namespace Spectrum.Test.Core.Test.ViewModel
         [Test]
         public void LoginBadPasswordCommandTest()
         {
-            _accountService.Login(_validEmail, _validPassword)
+            _accountService.LoginAsync(_validEmail, _validPassword)
                 .Returns(new Tuple<LoginResult, IUser>(LoginResult.BadPassword, null));
 
             _sutLoginViewModel.Email = _validEmail;
