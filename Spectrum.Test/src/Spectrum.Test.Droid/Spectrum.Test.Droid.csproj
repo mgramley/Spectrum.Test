@@ -90,6 +90,9 @@
     <PackageReference Include="MvvmCross.DroidX.Material">
       <Version>7.1.2</Version>
     </PackageReference>
+    <PackageReference Include="MvvmCross.DroidX.RecyclerView">
+      <Version>7.1.2</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.ConstraintLayout">
       <Version>1.1.3.2</Version>
     </PackageReference>
@@ -221,6 +224,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\fragment_directory.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\user_card.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

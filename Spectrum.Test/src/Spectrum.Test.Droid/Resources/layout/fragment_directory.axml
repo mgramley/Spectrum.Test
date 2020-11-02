@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -9,6 +11,12 @@
         android:text="@string/directory_header"
         android:textSize="@dimen/text_size_header"
         android:id="@+id/directory_header"
-        android:layout_margin="@dimen/margin_large"
+        android:layout_margin="@dimen/margin_medium"
         android:layout_gravity="center"/>
+
+    <MvvmCross.DroidX.RecyclerView.MvxRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        local:MvxItemTemplate="@layout/user_card"
+        local:MvxBind="ItemsSource UserDirectory"/>
 </LinearLayout>
