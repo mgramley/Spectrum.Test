@@ -30,7 +30,7 @@ namespace Spectrum.Test.Core.ViewModels.AccountCreation
         private string _serviceDateErrorMessage;
         private string _passwordErrorMessage;
 
-        public IMvxAsyncCommand CreateAccountCommand => _createAccountCommand ??= new MvxAsyncCommand(OnCreateAccountCommandAsync, CanCreateAccount);
+        public IMvxAsyncCommand CreateAccountCommand => _createAccountCommand ??= new MvxAsyncCommand(OnCreateAccountCommandAsync, CanAttemptToCreateAccount);
 
         /// <summary>
         /// Indicates that errors are being corrected. Set after an attempt to create an account is made. This way, we don't populate blank text fields with errors
@@ -96,7 +96,7 @@ namespace Spectrum.Test.Core.ViewModels.AccountCreation
                 CreateAccountCommand.RaiseCanExecuteChanged();
                 if (IsCorrectingMistakes)
                 {
-
+                    IsPhoneNumberValid();
                 }
             }
         }
@@ -112,7 +112,6 @@ namespace Spectrum.Test.Core.ViewModels.AccountCreation
                 if (IsCorrectingMistakes)
                 {
                     IsServiceStartDateValid();
-                    //RaisePropertyChanged(nameof(ServiceDateErrorMessage));
                 }
             }
         }
@@ -127,7 +126,6 @@ namespace Spectrum.Test.Core.ViewModels.AccountCreation
                 if (IsCorrectingMistakes)
                 {
                     IsPasswordValid();
-                    //RaisePropertyChanged(nameof(PasswordErrorMessage));
                 }
             }
         }
@@ -192,7 +190,7 @@ namespace Spectrum.Test.Core.ViewModels.AccountCreation
 
         #region AccountValidation
 
-        private bool CanCreateAccount()
+        private bool CanAttemptToCreateAccount()
         {
             return !string.IsNullOrWhiteSpace(FirstName)
                    && FirstName.Length > 1
@@ -215,8 +213,9 @@ namespace Spectrum.Test.Core.ViewModels.AccountCreation
            var isLastValid = IsLastNameValid();
            var isPassValid = IsPasswordValid();
            var isStartValid = IsServiceStartDateValid();
+           var isPhoneValid = IsPhoneNumberValid();
 
-           return isEmailValid && isFirstValid && isLastValid && isPassValid && isStartValid;
+           return isEmailValid && isFirstValid && isLastValid && isPassValid && isStartValid && isPhoneValid;
         }
 
         private async Task<bool> IsEmailValid()
@@ -296,6 +295,21 @@ namespace Spectrum.Test.Core.ViewModels.AccountCreation
             else
             {
                 ServiceDateErrorMessage = null;
+                return true;
+            }
+        }
+
+        private bool IsPhoneNumberValid()
+        {
+            if (!AccountValidation.IsValidPhoneNumber(PhoneNumber))
+            {
+                PhoneNumberErrorMessage = null;
+                PhoneNumberErrorMessage = Messages.PhoneNumberErrorMessage;
+                return false;
+            }
+            else
+            {
+                PhoneNumberErrorMessage = null;
                 return true;
             }
         }

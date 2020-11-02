@@ -12,6 +12,9 @@ namespace Spectrum.Test.Core.Models
 
         private const string SpecialCharactersPattern = @"[`!@#$%^&]";
 
+        private const string PhoneNumberPattern = @"^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$";
+        private const string OnlyNumbers = @"^[^a-z]*[0-9]+[^a-z]*$";
+
         /// <summary>
         /// Tests whether an email is in the correct form
         /// </summary>
@@ -51,6 +54,12 @@ namespace Spectrum.Test.Core.Models
         public static bool IsValidName(string name)
         {
             return !Regex.IsMatch(name, SpecialCharactersPattern);
+        }
+
+        public static bool IsValidPhoneNumber(string phoneNumber)
+        {
+            return phoneNumber.Length <= 14 &&
+                   Regex.IsMatch(phoneNumber, PhoneNumberPattern); //&& Regex.IsMatch(phoneNumber, OnlyNumbers);
         }
 
         private static bool HasNoRepeatingChars(string password)
