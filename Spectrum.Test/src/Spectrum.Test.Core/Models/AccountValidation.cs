@@ -37,7 +37,6 @@ namespace Spectrum.Test.Core.Models
         /// <returns></returns>
         public static bool IsValidPasswordForCreation(string password)
         {
-            //TODO: Check for repetitive phrases
             return !string.IsNullOrWhiteSpace(password) && Regex.IsMatch(password, PasswordPattern) && HasNoRepeatingChars(password);
         } 
 

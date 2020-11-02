@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
+using Spectrum.Test.Core.Models;
 using Spectrum.Test.Core.Models.Entities;
 using Spectrum.Test.Core.Services;
 using Spectrum.Test.Core.ViewModels.AccountCreation;
@@ -70,7 +71,7 @@ namespace Spectrum.Test.Core.ViewModels
 
         private bool CanLogin()
         {
-            return Email != null && Email.Contains("@") && Password != null && Password.Length >= 8;
+            return Email != null && AccountValidation.IsValidEmail(Email) && AccountValidation.IsValidPasswordForLogin(Password);
         }
 
         private async Task OnLoginCommandAsync()
