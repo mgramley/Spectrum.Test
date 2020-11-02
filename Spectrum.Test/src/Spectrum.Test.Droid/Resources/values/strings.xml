@@ -23,5 +23,7 @@
     <string name="account_created_message">Account Successfully Created</string>
     <string name="account_created_btn_login_return">Login Now?</string>
 
+    <string name="user_welcome_header">Welcome!</string>
+
 
 </resources>
